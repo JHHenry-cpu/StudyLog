@@ -33,8 +33,17 @@ nav a:hover {
 }
 
 button {
-    padding: 8px 12px;
+    padding: 10px 15px;
+    margin: 5px;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+button:hover {
+    background-color: #555;
 }
 
 .quote {
@@ -64,16 +73,6 @@ footer {
     margin-bottom: 20px;
 }
 
-button {
-    padding: 10px 15px;
-    margin: 5px;
-    cursor: pointer;
-}
-
 input {
     padding: 8px;
-}
-
-button {
-    padding: 8px 12px;
 }
