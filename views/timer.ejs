@@ -1,0 +1,64 @@
+<%- include('partials/header') %>
+
+<h1>Study Timer</h1>
+
+<div class="timer-box">
+
+    <h2 id="time">25:00</h2>
+
+    <button onclick="startTimer()">Start</button>
+
+    <button onclick="resetTimer()">Reset</button>
+
+</div>
+
+<script>
+
+    let timeLeft = 1500;
+
+    let timer;
+
+    function updateDisplay() {
+
+        let minutes = Math.floor(timeLeft / 60);
+
+        let seconds = timeLeft % 60;
+
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        document.getElementById('time').innerText =
+            minutes + ':' + seconds;
+
+    }
+
+    function startTimer() {
+
+        clearInterval(timer);
+
+        timer = setInterval(() => {
+
+            if(timeLeft > 0) {
+
+                timeLeft--;
+
+                updateDisplay();
+
+            }
+
+        }, 1000);
+
+    }
+
+    function resetTimer() {
+
+        clearInterval(timer);
+
+        timeLeft = 1500;
+
+        updateDisplay();
+
+    }
+
+</script>
+
+<%- include('partials/footer') %>

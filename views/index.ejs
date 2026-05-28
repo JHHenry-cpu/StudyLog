@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+
+<h1>StudyLog+</h1>
+
+<div class="quote">
+
+    <h3>Motivation of the Day</h3>
+
+    <p><%= quote %></p>
+
+</div>
+
+<br>
+
+<% if(tasks.length === 0) { %>
+
+    <p>No tasks yet.</p>
+
+<% } %>
+
+<% tasks.forEach((task, index) => { %>
+
+    <div class="card">
+
+        <% if(task.completed) { %>
+
+            <h3 style="text-decoration: line-through;">
+                <%= task.title %>
+            </h3>
+
+        <% } else { %>
+
+            <h3><%= task.title %></h3>
+
+        <% } %>
+
+        <p>Subject: <%= task.subject %></p>
+
+        <a href="/complete/<%= index %>">
+
+            <% if(task.completed) { %>
+                Undo
+            <% } else { %>
+                Complete
+            <% } %>
+
+        </a>
+
+        <a href="/edit/<%= index %>">Edit</a>
+
+        <a href="/delete/<%= index %>">Delete</a>
+
+    </div>
+
+<% }) %>
+
+<%- include('partials/footer') %>
