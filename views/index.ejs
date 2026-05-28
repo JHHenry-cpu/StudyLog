@@ -10,8 +10,6 @@
 
 </div>
 
-<br>
-
 <% if(tasks.length === 0) { %>
 
     <p>No tasks yet.</p>
@@ -39,16 +37,24 @@
         <a href="/complete/<%= index %>">
 
             <% if(task.completed) { %>
+
                 Undo
+
             <% } else { %>
+
                 Complete
+
             <% } %>
 
         </a>
 
-        <a href="/edit/<%= index %>">Edit</a>
+        <a href="/edit/<%= index %>">
+            Edit
+        </a>
 
-        <a href="/delete/<%= index %>">Delete</a>
+        <a href="/delete/<%= index %>">
+            Delete
+        </a>
 
     </div>
 
